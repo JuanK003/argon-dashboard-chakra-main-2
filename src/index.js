@@ -18,6 +18,8 @@ import AdminLayout from "layouts/Admin.js";
 import RTLLayout from "layouts/RTL.js"; // Chakra imports
 import { ChakraProvider } from "@chakra-ui/react";
 import CheckInStudents from "views/Dashboard/CheckInStudents";
+import UpdateCheckInStudents from "views/Dashboard/UpdateCheckInStudents";
+import ReadCheckInStudents from "views/Dashboard/ReadCheckInStudents";
 // Custom Chakra theme
 import theme from "theme/theme.js";
 
@@ -29,6 +31,8 @@ ReactDOM.render(
         <Route path={`/admin`} component={AdminLayout} />
         <Route path={`/rtl`} component={RTLLayout} />
         <Route path={`/checkin`} component={CheckInStudents} />
+        <Route path={`/updatecheckin`} component={UpdateCheckInStudents} />
+        <Route path={`/readcheckin`} component={ReadCheckInStudents} />
         <Redirect from={`/`} to="/admin/dashboard" />
       </Switch>
     </HashRouter>

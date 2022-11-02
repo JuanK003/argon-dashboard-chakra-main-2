@@ -13,7 +13,7 @@ import {
 import signInImage from "assets/img/signInImage.png";
 import { MAX_STUDENT_CODE_LENGHT } from "./utils";
 
-function CheckInStudents() {
+function UpdateCheckInStudents() {
   const [name, setName] = useState("");
   const [studentCode, setStudentCode] = useState("");
   const [career, setCareer] = useState("");
@@ -30,7 +30,7 @@ function CheckInStudents() {
     const value = e.target.value;
     if (/^([a-zA-Z]|\s{0,1})*$/.test(value)) setName(value);
   };
-  
+
   const handleString2lInputChange = (e) => {
     const value = e.target.value;
     if (/^([a-zA-Z]|\s{0,1})*$/.test(value)) setCareer(value);
@@ -151,7 +151,7 @@ function CheckInStudents() {
                   console.log(value);
                 }}
               >
-                CHECK IN
+                UPDATE CHECK IN
               </Button>
             </FormControl>
           </Flex>
@@ -177,4 +177,4 @@ function CheckInStudents() {
   );
 }
 
-export default CheckInStudents;
+export default UpdateCheckInStudents;

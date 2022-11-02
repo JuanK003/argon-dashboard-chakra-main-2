@@ -13,7 +13,7 @@ import {
 import signInImage from "assets/img/signInImage.png";
 import { MAX_STUDENT_CODE_LENGHT } from "./utils";
 
-function CheckInStudents() {
+function UpdateCheckInStudents() {
   const [name, setName] = useState("");
   const [studentCode, setStudentCode] = useState("");
   const [career, setCareer] = useState("");
@@ -30,7 +30,7 @@ function CheckInStudents() {
     const value = e.target.value;
     if (/^([a-zA-Z]|\s{0,1})*$/.test(value)) setName(value);
   };
-  
+
   const handleString2lInputChange = (e) => {
     const value = e.target.value;
     if (/^([a-zA-Z]|\s{0,1})*$/.test(value)) setCareer(value);
@@ -81,7 +81,7 @@ function CheckInStudents() {
                 fontSize="sm"
                 ms="4px"
                 type="text"
-                placeholder="Your full name"
+                readonly
                 mb="24px"
                 size="lg"
                 value={name}
@@ -95,7 +95,7 @@ function CheckInStudents() {
                 fontSize="sm"
                 ms="4px"
                 type="text"
-                placeholder="Your student code"
+                readonly
                 mb="24px"
                 size="lg"
                 value={studentCode}
@@ -109,7 +109,7 @@ function CheckInStudents() {
                 fontSize="sm"
                 ms="4px"
                 type="text"
-                placeholder="Your career"
+                readonly
                 mb="24px"
                 size="lg"
                 value={career}
@@ -121,6 +121,7 @@ function CheckInStudents() {
               <Input
                 type="time"
                 name="check-in-date"
+                readonly
                 id="check-in-date"
                 className="chakra-input"
                 mb="24px"
@@ -133,26 +134,13 @@ function CheckInStudents() {
               <Input
                 type="time"
                 name="check-in-date"
+                readonly
                 id="check-in-date"
                 className="chakra-input"
                 mb="24px"
                 value={checkOutDate}
                 onChange={setCheckOutDate}
               />
-              <Button
-                fontSize="10px"
-                variant="dark"
-                fontWeight="bold"
-                w="100%"
-                h="45"
-                mb="24px"
-                onClick={(value) => {
-                  // TODO
-                  console.log(value);
-                }}
-              >
-                CHECK IN
-              </Button>
             </FormControl>
           </Flex>
         </Flex>
@@ -177,4 +165,4 @@ function CheckInStudents() {
   );
 }
 
-export default CheckInStudents;
+export default UpdateCheckInStudents;

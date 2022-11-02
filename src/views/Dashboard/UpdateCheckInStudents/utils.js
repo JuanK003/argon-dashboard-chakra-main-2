@@ -1,0 +1,1 @@
+export const MAX_STUDENT_CODE_LENGHT = 9;
